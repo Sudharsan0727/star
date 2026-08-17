@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Sora', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-star-slate antialiased selection:bg-star-blue selection:text-white min-h-screen transition-colors duration-300;
+  }
+}
+
+/* Constellation Background Pattern Animation */
+@keyframes pattern-glide {
+  0% {
+    background-position: 0 0, 20px 20px;
+  }
+  100% {
+    background-position: 80px 80px, 100px 100px;
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes line-dash-flow {
+  0% { stroke-dashoffset: 40; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animated-constellation-pattern {
+  background-color: #F0F6FE;
+  background-image: 
+    radial-gradient(rgba(0, 82, 204, 0.15) 1.2px, transparent 1.2px), 
+    radial-gradient(rgba(59, 130, 246, 0.12) 1.2px, #F0F6FE 1.2px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  animation: pattern-glide 25s linear infinite;
+}
+
+.animate-pattern-pulse {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.animate-line-flow {
+  stroke-dasharray: 8 6;
+  animation: line-dash-flow 15s linear infinite;
+}
+
+/* Card & Scrollbar Styles */
+.star-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04);
+}
+
+.star-card:hover {
+  box-shadow: 0 12px 30px -6px rgba(0, 82, 204, 0.12);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
