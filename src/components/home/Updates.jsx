@@ -28,7 +28,7 @@ export default function Updates() {
             {/* Title & Arrow Controls Row (Aligned strictly to top of Left Card) */}
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
-                Latest News
+                1
               </h2>
 
               {/* Navigation Arrows (Positioned at top-right of Left Card) */}

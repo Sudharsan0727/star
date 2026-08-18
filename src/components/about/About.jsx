@@ -1,7 +1,8 @@
-import { FileText, FileEdit, Upload, GraduationCap, BarChart2, Microscope, CheckCircle2 } from 'lucide-react';
+import { FileText, FileEdit, Upload, GraduationCap, BarChart2, Microscope, CheckCircle2, FilePenLine } from 'lucide-react';
 import unionBg from '../../assets/Union.png';
 import containerImg from '../../assets/Container.png';
 import ctaBg from '../../assets/Image.png';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function About({ onOpenContact }) {
   const stats = [
@@ -36,6 +37,11 @@ export default function About({ onOpenContact }) {
 
   const bottomRowExpertise = [
     {
+      icon:<FilePenLine className="w-5 h-5 text-[#0052CC]" />,
+      title: "Proposal Writing",
+      desc: "Crafting compelling research proposals that align with funding agency requirements and maximize the chances of approval."
+    },
+    {
       icon: <BarChart2 className="w-5 h-5 text-[#0052CC]" />,
       title: "Data Analysis",
       desc: "Advanced statistical modeling and visualization for data-driven evidence across diverse scientific domains."
@@ -45,14 +51,15 @@ export default function About({ onOpenContact }) {
       title: "Advanced Characterization",
       desc: "Combining academic excellence with practical research experience to deliver high-quality, reliable, and customized research services."
     }
+    
   ];
 
   return (
     <div className="w-full font-sans bg-white text-slate-900">
-      
+
       {/* 1. HERO SECTION */}
-      <section className="py-24 my-8 relative overflow-hidden bg-white">
-        
+      <section id="who-we-are" className="py-24 my-8 relative overflow-hidden bg-white">
+
         {/* World Map Dotted Pattern Background Overlay */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <img
@@ -64,13 +71,13 @@ export default function About({ onOpenContact }) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Headline */}
-            <div className="lg:col-span-6 space-y-6">
+            <ScrollReveal animation="fade-left" className="lg:col-span-6 space-y-6">
               <div className="text-xs font-semibold text-[#0052CC] uppercase tracking-wider">
                 WHO WE ARE
               </div>
-              
+
               <h1 className="text-4xl sm:text-6xl font-semibold text-slate-900 leading-snug sm:leading-[1.25] tracking-tight">
                 Driven by Trust,<br />
                 Powered by<br />
@@ -91,17 +98,21 @@ export default function About({ onOpenContact }) {
                   Submit Your Requirement
                 </button>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Right Paragraphs */}
-            <div className="lg:col-span-6 space-y-6 text-sm text-slate-600 leading-relaxed font-medium">
+            <ScrollReveal animation="fade-right" className="lg:col-span-6 space-y-6 text-base text-slate-600 leading-relaxed font-medium">
               <p>
-                We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D. scholars, scientists, and academicians with expertise across science and engineering disciplines. Headquartered in the capital city of Tamil Nadu, India, we provide comprehensive research solutions to students, faculty members, industries, and research organizations worldwide.
+                We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D.
+                scholars, scientists, and academicians with expertise across science and engineering
+                disciplines.
               </p>
               <p>
-                Our team combines academic excellence with practical research experience to deliver high-quality, reliable, and customized research services across diverse scientific domains.
+                Headquartered in the capital city of Tamil Nadu, India, we provide
+                comprehensive research solutions to students, faculty members, industries, and research
+                organizations worldwide.
               </p>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -112,26 +123,26 @@ export default function About({ onOpenContact }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((item, idx) => (
-              <div key={idx} className="space-y-1">
+              <ScrollReveal key={idx} animation="zoom-in" delay={idx * 100} className="space-y-1">
                 <div className="text-3xl sm:text-5xl font-semibold text-white">
                   {item.num}<span className="text-[#FFB800]">+</span>
                 </div>
                 <div className="text-xs sm:text-sm font-semibold tracking-wider text-blue-100 uppercase">
                   {item.label}
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* 3. MESSAGE FROM THE DIRECTOR */}
-      <section className="py-24 bg-white border-b border-slate-100">
+      <section id="director-message" className="py-24 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Director Photo Card with Offset Blue Line Frame */}
-            <div className="lg:col-span-5 relative pl-4 pt-4">
+            <ScrollReveal animation="fade-left" className="lg:col-span-5 relative pl-4 pt-4">
               <div className="border border-blue-200/90 rounded-3xl absolute top-0 left-0 w-[calc(100%-1rem)] h-[calc(100%-1rem)] pointer-events-none"></div>
 
               <div className="rounded-3xl overflow-hidden shadow-2xl relative group bg-white border border-slate-200/80">
@@ -140,7 +151,7 @@ export default function About({ onOpenContact }) {
                   alt="Dr. Anandan - Director & Founder, Star ResearchHub"
                   className="w-full h-auto max-h-[500px] object-cover object-top"
                 />
-                
+
                 <div className="absolute bottom-6 left-6 right-6 bg-[#E5E9EF] p-4 sm:p-5 rounded-2xl shadow-md border border-slate-200/80">
                   <h4 className="text-sm sm:text-base font-bold text-slate-900">Dr. Anandan</h4>
                   <p className="text-xs text-slate-600 font-medium">
@@ -149,10 +160,10 @@ export default function About({ onOpenContact }) {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
             {/* Right Quote & Detailed Message */}
-            <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
                 Message from the Director
               </h2>
@@ -167,7 +178,7 @@ export default function About({ onOpenContact }) {
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
                 We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D. scholars, scientists, and academicians with expertise across science and engineering disciplines. Headquartered in the capital city of Tamil Nadu, India, we provide comprehensive research solutions to students, faculty members, industries, and research organizations worldwide.
               </p>
 
@@ -186,7 +197,7 @@ export default function About({ onOpenContact }) {
                 </button>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -195,22 +206,22 @@ export default function About({ onOpenContact }) {
       {/* 4. OUR EXPERTISE SECTION */}
       <section className="py-24 bg-[#F0F6FE] border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
+
+          <ScrollReveal animation="fade-up" className="text-center max-w-lg mx-auto mb-16 space-y-3">
             <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
               Our Expertise
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              Precision-engineered research solutions tailored for global scholarly and commercial impact.
+              We are a multidisciplinary research consultancy that provides comprehensive research solutions to students, faculty members, industries, and research organizations worldwide.
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="space-y-6">
-            
+
             {/* Top Row: 4 Equal Width Vertical Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {topRowExpertise.map((item, idx) => (
-                <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <ScrollReveal key={idx} animation="fade-left" delay={idx * 100} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                   <div>
                     <div className="mb-6">
                       {item.icon}
@@ -222,14 +233,14 @@ export default function About({ onOpenContact }) {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
 
-            {/* Bottom Row: 2 Wide Horizontal Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Bottom Row: 3 Wide Horizontal Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {bottomRowExpertise.map((item, idx) => (
-                <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <ScrollReveal key={idx} animation="fade-right" delay={idx * 100} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                   <div>
                     <div className="mb-6">
                       {item.icon}
@@ -241,7 +252,7 @@ export default function About({ onOpenContact }) {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
 
@@ -251,12 +262,12 @@ export default function About({ onOpenContact }) {
       </section>
 
       {/* 5. OUR VISION & OUR MISSION */}
-      <section className="w-full py-0 font-sans">
+      <section id="vision-mission" className="w-full py-0 font-sans">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 w-full">
-          
+
           {/* Left Panel: Our Vision */}
-          <div className="bg-gradient-to-br from-[#0047BA] via-[#003B94] to-[#002D7A] text-white p-12 sm:p-16 lg:p-24 flex flex-col justify-center">
-            
+          <ScrollReveal animation="fade-left" className="bg-gradient-to-br from-[#0047BA] via-[#003B94] to-[#002D7A] text-white p-12 sm:p-16 lg:p-24 flex flex-col justify-center">
+
             <div className="text-xs font-semibold text-blue-200/90 uppercase tracking-[0.2em] mb-3">
               OUR HORIZON
             </div>
@@ -283,11 +294,11 @@ export default function About({ onOpenContact }) {
               </div>
             </div>
 
-          </div>
+          </ScrollReveal>
 
           {/* Right Panel: Our Mission */}
-          <div className="bg-[#CBE0FE] text-slate-900 p-12 sm:p-16 lg:p-24 flex flex-col justify-center">
-            
+          <ScrollReveal animation="fade-right" className="bg-[#CBE0FE] text-slate-900 p-12 sm:p-16 lg:p-24 flex flex-col justify-center">
+
             <div className="text-xs font-semibold text-[#0047BA] uppercase tracking-[0.2em] mb-3">
               OUR DAILY DRIVE
             </div>
@@ -314,18 +325,18 @@ export default function About({ onOpenContact }) {
               </div>
             </div>
 
-          </div>
+          </ScrollReveal>
 
         </div>
       </section>
 
       {/* 6. ETHICAL POLICY / OUR INTEGRITY */}
-      <section className="py-24 bg-[#F0F6FE] font-sans">
+      <section id="ethical-policy" className="py-24 bg-[#F0F6FE] font-sans">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Main White Card Container */}
-          <div className="bg-white rounded-[36px] sm:rounded-[44px] border border-slate-200/80 p-8 sm:p-14 lg:p-16 shadow-xl shadow-slate-200/60 relative overflow-hidden">
-            
+          <ScrollReveal animation="fade-up" className="bg-white rounded-[36px] sm:rounded-[44px] border border-slate-200/80 p-8 sm:p-14 lg:p-16 shadow-xl shadow-slate-200/60 relative overflow-hidden">
+
             {/* Top Right Ethical Certified Stamp Badge */}
             <div className="absolute top-8 right-8 border-2 border-blue-300/80 rounded-2xl px-4 py-2.5 text-[10px] font-mono font-bold text-blue-400 uppercase tracking-widest text-center rotate-[10deg] hidden sm:block bg-white/50 backdrop-blur-xs shadow-2xs">
               <div>ETHICAL</div>
@@ -347,7 +358,7 @@ export default function About({ onOpenContact }) {
 
             {/* Bullet Points */}
             <div className="space-y-8 max-w-5xl mx-auto mb-10">
-              
+
               <div className="flex items-start space-x-4">
                 <FileEdit className="w-5 h-5 text-[#0052CC] shrink-0 mt-1" />
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
@@ -369,14 +380,14 @@ export default function About({ onOpenContact }) {
               Where our team makes substantial intellectual contributions to a research project, authorship may be considered in accordance with internationally accepted publication ethics and the policies of the target journal, with mutual agreement among all collaborators.
             </div>
 
-          </div>
+          </ScrollReveal>
 
         </div>
       </section>
 
       {/* 7. CTA BANNER WITH LAB BACKGROUND PHOTO */}
       <section className="relative py-20 sm:py-24 bg-slate-950 text-white overflow-hidden">
-        
+
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -387,11 +398,11 @@ export default function About({ onOpenContact }) {
           <div className="absolute inset-0 bg-slate-950/40"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+        <ScrollReveal animation="zoom-in" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
           <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
             Ready to Advance Your Research?
           </h2>
-          
+
           <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-loose sm:leading-[1.8] font-medium">
             Partner with our team of scientists and experts to bring your research vision to life with uncompromising quality.
           </p>
@@ -410,7 +421,7 @@ export default function About({ onOpenContact }) {
               Submit Your Requirement
             </button>
           </div>
-        </div>
+        </ScrollReveal>
 
       </section>
 

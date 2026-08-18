@@ -7,15 +7,15 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
 
   const submenus = {
     about: [
-      { name: "Who We Are", action: 'about', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Message from Director", action: 'about', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Our Vision & Mission", action: 'about', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Ethical Policy", action: 'about', icon: <ShieldCheck className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Who We Are", action: 'about', scrollId: 'who-we-are', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Message from Director", action: 'about', scrollId: 'director-message', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Our Vision & Mission", action: 'about', scrollId: 'vision-mission', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Ethical Policy", action: 'about', scrollId: 'ethical-policy', icon: <ShieldCheck className="w-4 h-4 text-[#0052CC]" /> },
     ],
     services: [
-      { name: "Core Service Offerings", action: 'services', icon: <Layers className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Why Choose Us", action: 'services', icon: <Compass className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Manuscript & Publication", action: 'services', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Core Service Offerings", action: 'services', scrollId: 'core-services', icon: <Layers className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Why Choose Us", action: 'services', scrollId: 'core-services', icon: <Compass className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Manuscript & Publication", action: 'services', scrollId: 'core-services', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
     ],
     expertise: [
       { name: "Research domains", action: 'expertise-domains', icon: <BarChart2 className="w-4 h-4 text-[#0052CC]" /> },
@@ -23,7 +23,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
     ],
     collaborations: [
       { name: "Ongoing Collaborative Projects", action: 'collaborations-ongoing', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Published works", action: 'collaborations', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Published works", action: 'collaborations-published', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Completed projects", action: 'collaborations-completed', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Research Experts", action: 'collaborations-experts', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Our Research Partner", action: 'collaborations-partners', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
@@ -101,7 +101,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
       </div>
 
       {/* Tier 2: Main Navigation Bar */}
-      <div className="bg-white border-b border-slate-200 py-2.5 px-4 sm:px-6 lg:px-8 relative">
+      <div className="bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Menu Items */}
@@ -119,7 +119,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
                 >
                   <button
                     onClick={(e) => handleNavClick(e, item)}
-                    className={`flex items-center space-x-1.5 px-1 py-2 transition-colors hover:text-[#0052CC] cursor-pointer focus:outline-none ${
+                    className={`flex items-center space-x-1.5 px-1 py-2 text-base transition-colors hover:text-[#0052CC] cursor-pointer focus:outline-none ${
                       isActive ? 'text-[#0052CC] font-bold' : 'text-slate-800'
                     }`}
                   >
@@ -154,13 +154,13 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
 
           {/* Search & Get in Touch CTA */}
           <div className="hidden lg:flex items-center space-x-5">
-            <button className="p-1.5 text-slate-700 hover:text-[#0052CC] transition-colors focus:outline-none" title="Search">
+            {/* <button className="p-1.5 text-slate-700 hover:text-[#0052CC] transition-colors focus:outline-none" title="Search">
               <Search className="w-4 h-4" />
-            </button>
+            </button> */}
 
             <button
               onClick={() => onNavigate && onNavigate('contact')}
-              className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#0052CC] to-[#003B94] hover:from-[#0040A8] hover:to-[#002D7A] shadow-md transition-all duration-200 cursor-pointer"
+              className="px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#0052CC] to-[#003B94] hover:from-[#0040A8] hover:to-[#002D7A] shadow-md transition-all duration-200 cursor-pointer"
             >
               Get in Touch
             </button>

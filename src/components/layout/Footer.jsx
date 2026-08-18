@@ -8,6 +8,7 @@ export default function Footer({ onNavigate }) {
     { name: 'Expertise', id: 'expertise' },
     { name: 'Facilities', id: 'facilities' },
     { name: 'Collaborations', id: 'collaborations' },
+    { name: 'Contact Us', id: 'contact' },
   ];
 
   const handleLinkClick = (e, item) => {

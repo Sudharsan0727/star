@@ -79,3 +79,76 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94A3B8;
 }
+
+/* ==========================================================================
+   Scroll Reveal Animations
+   ========================================================================== */
+.reveal-base {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+}
+
+.reveal-fade-in {
+  opacity: 0;
+}
+.reveal-fade-in.is-visible {
+  opacity: 1;
+}
+
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.reveal-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade-down {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+.reveal-fade-down.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left to Right Fade/Slide */
+.reveal-fade-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+.reveal-fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right to Left Fade/Slide */
+.reveal-fade-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+.reveal-fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom In */
+.reveal-zoom-in {
+  opacity: 0;
+  transform: scale(0.92);
+}
+.reveal-zoom-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-base {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
