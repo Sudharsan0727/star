@@ -1,4 +1,5 @@
 import unionBg from '../../assets/Union.png';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function WhoWeAre({ onOpenContact }) {
   const stats = [
@@ -25,7 +26,7 @@ export default function WhoWeAre({ onOpenContact }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Left Column */}
-          <div className="lg:col-span-5 space-y-4">
+          <ScrollReveal animation="fade-left" className="lg:col-span-5 space-y-4">
             <div className="text-xs font-bold text-[#0052CC] uppercase tracking-widest">
               WHO WE ARE
             </div>
@@ -42,10 +43,10 @@ export default function WhoWeAre({ onOpenContact }) {
                 Contact Us
               </button>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right Column */}
-          <div className="lg:col-span-7 space-y-6 text-base text-slate-600 leading-relaxed font-medium">
+          <ScrollReveal animation="fade-right" className="lg:col-span-7 space-y-6 text-base text-slate-600 leading-relaxed font-medium">
             <p>
               We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D.
               scholars, scientists, and academicians with expertise across science and engineering
@@ -56,7 +57,7 @@ export default function WhoWeAre({ onOpenContact }) {
               comprehensive research solutions to students, faculty members, industries, and research
               organizations worldwide.
             </p>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>
@@ -66,14 +67,14 @@ export default function WhoWeAre({ onOpenContact }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map((stat, idx) => (
-              <div key={idx} className="space-y-2">
+              <ScrollReveal key={idx} animation="zoom-in" delay={idx * 100} className="space-y-2">
                 <div className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
                   {stat.number}<span className="text-[#FFB800] font-semibold">+</span>
                 </div>
                 <div className="text-xs sm:text-sm font-semibold tracking-wider text-blue-100 uppercase">
                   {stat.label}
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -82,3 +83,4 @@ export default function WhoWeAre({ onOpenContact }) {
     </section>
   );
 }
+

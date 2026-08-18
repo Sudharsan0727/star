@@ -1,3 +1,5 @@
+import ScrollReveal from '../common/ScrollReveal';
+
 export default function Hero({ onOpenContact }) {
   return (
     <section className="relative pt-16 pb-24 lg:pt-20 lg:pb-32 animated-constellation-pattern overflow-hidden text-center">
@@ -61,7 +63,7 @@ export default function Hero({ onOpenContact }) {
 
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <ScrollReveal animation="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Tag Pill */}
         <div className="flex justify-center mb-6">
@@ -102,7 +104,7 @@ export default function Hero({ onOpenContact }) {
 
         </div>
 
-      </div>
+      </ScrollReveal>
 
     </section>
   );

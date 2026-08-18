@@ -7,15 +7,15 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
 
   const submenus = {
     about: [
-      { name: "Who We Are", action: 'about', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Message from Director", action: 'about', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Our Vision & Mission", action: 'about', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Ethical Policy", action: 'about', icon: <ShieldCheck className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Who We Are", action: 'about', scrollId: 'who-we-are', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Message from Director", action: 'about', scrollId: 'director-message', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Our Vision & Mission", action: 'about', scrollId: 'vision-mission', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Ethical Policy", action: 'about', scrollId: 'ethical-policy', icon: <ShieldCheck className="w-4 h-4 text-[#0052CC]" /> },
     ],
     services: [
-      { name: "Core Service Offerings", action: 'services', icon: <Layers className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Why Choose Us", action: 'services', icon: <Compass className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Manuscript & Publication", action: 'services', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Core Service Offerings", action: 'services', scrollId: 'core-services', icon: <Layers className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Why Choose Us", action: 'services', scrollId: 'core-services', icon: <Compass className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Manuscript & Publication", action: 'services', scrollId: 'core-services', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
     ],
     expertise: [
       { name: "Research domains", action: 'expertise-domains', icon: <BarChart2 className="w-4 h-4 text-[#0052CC]" /> },
@@ -23,7 +23,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
     ],
     collaborations: [
       { name: "Ongoing Collaborative Projects", action: 'collaborations-ongoing', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Published works", action: 'collaborations', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Published works", action: 'collaborations-published', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Completed projects", action: 'collaborations-completed', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Research Experts", action: 'collaborations-experts', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Our Research Partner", action: 'collaborations-partners', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },

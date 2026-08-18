@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Mail, Phone, ArrowUpRight, ArrowDown, Check } from 'lucide-react';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function ContactView() {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ export default function ContactView() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Hero Content (7 Cols) */}
-            <div className="lg:col-span-7 space-y-6">
+            <ScrollReveal animation="fade-left" className="lg:col-span-7 space-y-6">
               
               {/* Badge */}
               <span className="text-[#0052CC] text-xs font-bold uppercase tracking-wider block">
@@ -80,10 +81,10 @@ export default function ContactView() {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
             {/* Right Quote Card (5 Cols) */}
-            <div className="lg:col-span-5">
+            <ScrollReveal animation="fade-right" className="lg:col-span-5">
               <div className="bg-[#F1F5F9] rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-xs relative overflow-hidden flex flex-col justify-end min-h-[260px]">
                 
                 <div className="bg-white/90 backdrop-blur-xs p-6 sm:p-7 rounded-2xl border border-slate-200/80 shadow-xs space-y-4">
@@ -96,7 +97,7 @@ export default function ContactView() {
                 </div>
 
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -108,7 +109,7 @@ export default function ContactView() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 items-start">
             
             {/* Left Column: Research Inquiry Form (7 Cols) */}
-            <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-xs">
+            <ScrollReveal animation="fade-left" className="lg:col-span-7 bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-xs">
               <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                   Research Inquiry
@@ -214,10 +215,10 @@ export default function ContactView() {
                 </form>
               )}
 
-            </div>
+            </ScrollReveal>
 
             {/* Right Column: Global HQ & Social Connect (5 Cols) */}
-            <div className="lg:col-span-5 space-y-6">
+            <ScrollReveal animation="fade-right" className="lg:col-span-5 space-y-6">
               
               {/* Global HQ Card */}
               <div className="bg-[#003B94] text-white rounded-3xl p-8 sm:p-10 space-y-8 shadow-md">
@@ -309,7 +310,7 @@ export default function ContactView() {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>
@@ -318,7 +319,7 @@ export default function ContactView() {
       {/* 3. BOTTOM LOCATION / MAP SECTION */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[36px] overflow-hidden relative shadow-2xl min-h-[420px] flex items-center justify-center bg-slate-900 border border-slate-200/50">
+          <ScrollReveal animation="fade-up" className="rounded-[36px] overflow-hidden relative shadow-2xl min-h-[420px] flex items-center justify-center bg-slate-900 border border-slate-200/50">
             
             {/* Embedded Live Google Maps Iframe */}
             <iframe
@@ -368,7 +369,7 @@ export default function ContactView() {
               <ArrowUpRight className="w-4 h-4" />
             </a>
 
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

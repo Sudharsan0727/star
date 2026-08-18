@@ -1,3 +1,5 @@
+import ScrollReveal from '../common/ScrollReveal';
+
 export default function ApplicationAreas() {
   const areas = [
     {
@@ -27,20 +29,22 @@ export default function ApplicationAreas() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-lg mx-auto mb-16 space-y-3">
+        <ScrollReveal animation="fade-up" className="text-center max-w-lg mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
             Application Areas
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
             Our consultancy spans critical sectors where scientific breakthroughs drive global transformation.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* 5 Vertical Image Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-7">
           {areas.map((area, idx) => (
-            <div
+            <ScrollReveal
               key={idx}
+              animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
+              delay={idx * 100}
               className="h-[360px] sm:h-[380px] rounded-3xl relative overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 group cursor-pointer"
             >
               {/* Background Image */}
@@ -56,7 +60,7 @@ export default function ApplicationAreas() {
                   {area.title}
                 </h3>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -64,3 +68,4 @@ export default function ApplicationAreas() {
     </section>
   );
 }
+

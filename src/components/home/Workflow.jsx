@@ -1,4 +1,5 @@
 import { Lightbulb, ClipboardList, Microscope, TrendingUp, FileText, Check } from 'lucide-react';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function Workflow() {
   const steps = [
@@ -44,9 +45,11 @@ export default function Workflow() {
     <section className="py-20 sm:py-24 bg-gradient-to-r from-[#003B94] via-[#004CB8] to-[#0052CC] text-white shadow-inner font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        <h2 className="text-3xl sm:text-5xl font-medium mb-16 tracking-tight text-white">
-          Research Workflow
-        </h2>
+        <ScrollReveal animation="fade-up">
+          <h2 className="text-3xl sm:text-5xl font-medium mb-16 tracking-tight text-white">
+            Research Workflow
+          </h2>
+        </ScrollReveal>
 
         {/* 6 Step Horizontal Timeline */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 relative">
@@ -55,7 +58,7 @@ export default function Workflow() {
           <div className="hidden lg:block absolute top-7 left-[7%] right-[7%] h-[2.5px] bg-white z-0"></div>
 
           {steps.map((step, idx) => (
-            <div key={idx} className="relative z-10 flex flex-col items-center group">
+            <ScrollReveal key={idx} animation="zoom-in" delay={idx * 100} className="relative z-10 flex flex-col items-center group">
               
               {/* Node Circle */}
               <div
@@ -76,7 +79,7 @@ export default function Workflow() {
                 {step.sub}
               </p>
 
-            </div>
+            </ScrollReveal>
           ))}
 
         </div>
@@ -85,3 +88,4 @@ export default function Workflow() {
     </section>
   );
 }
+

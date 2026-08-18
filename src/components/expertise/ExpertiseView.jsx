@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ScrollReveal from '../common/ScrollReveal';
 import {
   Atom,
   Orbit,
@@ -214,7 +215,7 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
       
       {/* 1. HERO SECTION & TAB SWITCHER */}
       <section className="py-20 sm:py-24 bg-[#F9F9FC] text-center border-b border-slate-100/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <ScrollReveal animation="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           
           {/* Badge */}
           <div className="inline-block">
@@ -233,8 +234,7 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
             Comprehensive academic and industrial research support tailored to international standards.
           </p>
 
-
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* 2. CARDS SECTION */}
@@ -245,8 +245,10 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
             /* 9 RESEARCH DOMAIN CARDS (3x3 GRID) */
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {domainCards.map((card, idx) => (
-                <div
+                <ScrollReveal
                   key={idx}
+                  animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
+                  delay={(idx % 3) * 100}
                   className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between"
                 >
                   <div className="bg-gradient-to-r from-[#003B94] to-[#002D7A] text-white px-5 py-3.5 font-bold text-sm sm:text-base">
@@ -267,7 +269,7 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
                       {card.icon}
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           ) : (

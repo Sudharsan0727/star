@@ -6,6 +6,7 @@ import img65 from '../../assets/image 65.png';
 import img66 from '../../assets/image 66.png';
 import img68 from '../../assets/image 68.png';
 import preview1Img from '../../assets/preview 1.png';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function CollaborationsView({ initialTab = 'ongoing', onOpenContact }) {
   const [activeTab, setActiveTab] = useState(initialTab);
@@ -95,7 +96,7 @@ export default function CollaborationsView({ initialTab = 'ongoing', onOpenConta
       
       {/* 1. HERO BANNER */}
       <section className="py-20 sm:py-24 bg-[#F9F9FC] text-center border-b border-slate-100/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        <ScrollReveal animation="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
           
           {/* Badge */}
           <div className="inline-block">
@@ -121,7 +122,7 @@ export default function CollaborationsView({ initialTab = 'ongoing', onOpenConta
             Comprehensive academic and industrial research support tailored to international standards.
           </p>
 
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* 2. MAIN CONTENT SECTION */}
@@ -307,7 +308,7 @@ export default function CollaborationsView({ initialTab = 'ongoing', onOpenConta
       {/* 3. READY TO ELEVATE YOUR RESEARCH? (CTA BANNER) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0047BA] via-[#003B94] to-[#002D7A] rounded-[36px] sm:rounded-[44px] p-10 sm:p-16 text-center text-white shadow-xl space-y-6">
+          <ScrollReveal animation="zoom-in" className="bg-gradient-to-r from-[#0047BA] via-[#003B94] to-[#002D7A] rounded-[36px] sm:rounded-[44px] p-10 sm:p-16 text-center text-white shadow-xl space-y-6">
             
             <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
               Ready to Elevate Your Research?
@@ -332,7 +333,7 @@ export default function CollaborationsView({ initialTab = 'ongoing', onOpenConta
               </button>
             </div>
 
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

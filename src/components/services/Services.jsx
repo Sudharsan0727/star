@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import Institutions from '../home/Institutions';
 import Voices from '../home/Voices';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function Services({ onOpenContact }) {
   const whyChooseUsFeatures = [
@@ -26,7 +27,7 @@ export default function Services({ onOpenContact }) {
 
       {/* 1. HERO SECTION */}
       <section className="py-32 sm:py-36 bg-[#F9F9FC] text-center border-b border-slate-100/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <ScrollReveal animation="fade-up" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
 
           {/* Top Category Badge */}
           <div className="inline-block">
@@ -62,28 +63,28 @@ export default function Services({ onOpenContact }) {
             </button>
           </div>
 
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* 2. CORE SERVICE OFFERINGS */}
-      <section className="py-24 bg-white border-b border-slate-100 font-sans">
+      <section id="core-services" className="py-24 bg-white border-b border-slate-100 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Section Header */}
-          <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+          <ScrollReveal animation="fade-up" className="text-center max-w-xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
               Core Service Offerings
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
               Comprehensive academic and industrial research support tailored to international standards.
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* 3 Columns Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
             {/* COLUMN 1: STACK OF 2 CARDS */}
-            <div className="flex flex-col justify-between space-y-6 h-full">
+            <ScrollReveal animation="fade-left" className="flex flex-col justify-between space-y-6 h-full">
 
               {/* Card 1: Research & Publication Support */}
               <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between grow">
@@ -169,10 +170,10 @@ export default function Services({ onOpenContact }) {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
             {/* COLUMN 2: 1 TALL CARD - Research Consultancy */}
-            <div className="h-full flex flex-col">
+            <ScrollReveal animation="fade-up" delay={150} className="h-full flex flex-col">
               <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between h-full grow">
                 <div className="bg-gradient-to-r from-[#003B94] to-[#002D7A] text-white px-5 py-3.5 font-bold text-sm sm:text-base">
                   Research Consultancy
@@ -213,10 +214,10 @@ export default function Services({ onOpenContact }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* COLUMN 3: STACK OF 2 CARDS */}
-            <div className="flex flex-col justify-between space-y-6 h-full">
+            <ScrollReveal animation="fade-right" delay={300} className="flex flex-col justify-between space-y-6 h-full">
 
               {/* Card 1: Academic Projects */}
               <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between grow">
@@ -278,7 +279,7 @@ export default function Services({ onOpenContact }) {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
 

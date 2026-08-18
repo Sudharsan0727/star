@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Mail, Phone, CheckCircle2 } from 'lucide-react';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -28,7 +29,7 @@ export default function ContactSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
             
             {/* Left Form Panel */}
-            <div className="lg:col-span-6 flex flex-col justify-between">
+            <ScrollReveal animation="fade-left" className="lg:col-span-6 flex flex-col justify-between">
               
               <div>
                 <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 leading-snug sm:leading-[1.25] tracking-tight mb-3">
@@ -114,10 +115,10 @@ export default function ContactSection() {
                 </form>
               )}
 
-            </div>
+            </ScrollReveal>
 
             {/* Right HQ Panel */}
-            <div className="lg:col-span-6 space-y-4 flex flex-col justify-between">
+            <ScrollReveal animation="fade-right" className="lg:col-span-6 space-y-4 flex flex-col justify-between">
               
               {/* HQ Container Box */}
               <div className="p-8 sm:p-12 rounded-3xl bg-[#EAEFF5] text-center flex flex-col items-center justify-center h-full min-h-[320px]">
@@ -149,7 +150,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>

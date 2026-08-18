@@ -1,10 +1,12 @@
+import ScrollReveal from '../common/ScrollReveal';
+
 export default function CallToAction({ onOpenContact }) {
   return (
     <section className="py-20 bg-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Blue Container Box */}
-        <div className="bg-gradient-to-r from-[#003B94] via-[#004CB8] to-[#0052CC] rounded-[36px] sm:rounded-[44px] p-12 sm:p-16 lg:p-20 text-white text-center shadow-xl">
+        <ScrollReveal animation="zoom-in" className="bg-gradient-to-r from-[#003B94] via-[#004CB8] to-[#0052CC] rounded-[36px] sm:rounded-[44px] p-12 sm:p-16 lg:p-20 text-white text-center shadow-xl">
           
           <h2 className="text-3xl sm:text-5xl font-semibold tracking-tight text-white mb-4 leading-tight">
             Ready to Elevate Your<br /> Research?
@@ -34,9 +36,10 @@ export default function CallToAction({ onOpenContact }) {
 
           </div>
 
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>
   );
 }
+

@@ -1,3 +1,5 @@
+import ScrollReveal from '../common/ScrollReveal';
+
 export default function FacilitiesView({ onOpenContact }) {
   const facilityCategories = [
     {
@@ -58,11 +60,10 @@ export default function FacilitiesView({ onOpenContact }) {
       items: [
         { name: "OriginPro" },
         { name: "MATLAB" },
-        { name: "COMSOL" },
-        { name: "ImageJ" },
-        { name: "SPSS" },
-        { name: "GraphPad Prism" },
-        { name: "Crystal Structure Refinement" },
+        { name: "COMSOL Multiphysics" },
+        { name: "Gaussian / DFT Software" },
+        { name: "AutoDock / Molecular Docking Tools" },
+        { name: "Python / R Data Analytics Scripts" },
       ]
     },
     {
@@ -104,36 +105,38 @@ export default function FacilitiesView({ onOpenContact }) {
       
       {/* 1. HERO SECTION */}
       <section className="py-20 sm:py-24 bg-[#F9F9FC] text-center border-b border-slate-100/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <ScrollReveal animation="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           
           {/* Badge */}
           <div className="inline-block">
             <span className="bg-[#D9E8FC] text-[#0052CC] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
-              FACILITIES
+              FACILITIES & CHARACTERIZATION
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-900 tracking-tight leading-snug sm:whitespace-nowrap">
-            Characterization & Analytical Facilities
+            Advanced Characterization Facilities
           </h1>
 
           {/* Subtitle */}
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed font-medium">
-            Comprehensive academic and industrial research support tailored to international standards.
+            Cutting-edge analytical instruments and techniques to support rigorous scientific research.
           </p>
 
-        </div>
+        </ScrollReveal>
       </section>
 
-      {/* 2. FACILITIES CATEGORIES GRID (2 COLUMNS GRID MATCHING SCREENSHOT EXACTLY) */}
+      {/* 2. CHARACTERIZATION CATEGORIES GRID */}
       <section className="py-24 bg-[#F8FAFC] border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {facilityCategories.map((category, cIdx) => (
-              <div
+              <ScrollReveal
                 key={cIdx}
+                animation={cIdx % 2 === 0 ? "fade-left" : "fade-right"}
+                delay={(cIdx % 2) * 150}
                 className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden"
               >
                 {/* Dark Blue Header Bar */}
@@ -163,7 +166,7 @@ export default function FacilitiesView({ onOpenContact }) {
                   </div>
                 </div>
 
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -173,7 +176,7 @@ export default function FacilitiesView({ onOpenContact }) {
       {/* 3. READY TO ELEVATE YOUR RESEARCH? (CTA BANNER) */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#0047BA] via-[#003B94] to-[#002D7A] rounded-[36px] sm:rounded-[44px] p-10 sm:p-16 text-center text-white shadow-xl space-y-6">
+          <ScrollReveal animation="zoom-in" className="bg-gradient-to-r from-[#0047BA] via-[#003B94] to-[#002D7A] rounded-[36px] sm:rounded-[44px] p-10 sm:p-16 text-center text-white shadow-xl space-y-6">
             
             <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
               Ready to Elevate Your Research?
@@ -198,7 +201,7 @@ export default function FacilitiesView({ onOpenContact }) {
               </button>
             </div>
 
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

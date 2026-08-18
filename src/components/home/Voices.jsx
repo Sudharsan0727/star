@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import ScrollReveal from '../common/ScrollReveal';
 
 export default function Voices() {
   const testimonials = [
@@ -27,19 +28,24 @@ export default function Voices() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16 space-y-3">
+        <ScrollReveal animation="fade-up" className="text-center max-w-4xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight whitespace-nowrap">
             Voices of Innovation
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
             Experience shared by our partners in the field, academia, and the boardroom.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* 3 Partner Review Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((item, idx) => (
-            <div key={idx} className="p-8 sm:p-9 rounded-3xl bg-white border border-slate-100/90 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow">
+            <ScrollReveal
+              key={idx}
+              animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
+              delay={idx * 150}
+              className="p-8 sm:p-9 rounded-3xl bg-white border border-slate-100/90 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
+            >
               <div>
                 {/* Avatar & Partner Info */}
                 <div className="flex items-center space-x-3.5 mb-6">
@@ -66,7 +72,7 @@ export default function Voices() {
                   <Star key={i} className="w-4 h-4 fill-[#FF5A1F] text-[#FF5A1F]" />
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -74,3 +80,4 @@ export default function Voices() {
     </section>
   );
 }
+
