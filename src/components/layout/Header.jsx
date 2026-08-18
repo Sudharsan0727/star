@@ -4,6 +4,7 @@ import { Search, ChevronDown, Menu, X, Layers, Compass, FileText, UserCheck, Shi
 export default function Header({ currentPage = 'home', onNavigate, onOpenContact }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [expandedMobileSubmenu, setExpandedMobileSubmenu] = useState(null);
 
   const submenus = {
     about: [
@@ -100,8 +101,8 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
         </div>
       </div>
 
-      {/* Tier 2: Main Navigation Bar */}
-      <div className="bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 relative">
+      {/* Tier 2: Main Navigation Bar (Desktop Only) */}
+      <div className="hidden lg:block bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Menu Items */}
@@ -171,51 +172,77 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 shadow-lg">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3 shadow-xl animate-in fade-in duration-200">
           <div className="text-[11px] font-semibold text-slate-600 pb-2 border-b border-slate-100 flex items-center space-x-1.5">
-            <span className="w-2 h-2 rounded-full bg-rose-500"></span>
-            <span>Empowering Research, Innovation, and Scientific Excellence.</span>
+            <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0"></span>
+            <span className="truncate">Empowering Research, Innovation, and Scientific Excellence.</span>
           </div>
 
-          {navItems.map((item) => (
-            <div key={item.id} className="space-y-1">
-              <button
-                onClick={(e) => {
-                  if (!item.hasDropdown) setMobileOpen(false);
-                  handleNavClick(e, item);
-                }}
-                className="w-full text-left px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-[#0052CC] rounded-lg flex items-center justify-between"
-              >
-                <span>{item.name}</span>
-                {item.hasDropdown && <ChevronDown className="w-4 h-4 text-slate-400" />}
-              </button>
+          <div className="space-y-1">
+            {navItems.map((item) => {
+              const hasSub = item.hasDropdown && submenus[item.id];
+              const isExpanded = expandedMobileSubmenu === item.id;
 
-              {/* Mobile Submenu List */}
-              {item.hasDropdown && submenus[item.id] && (
-                <div className="pl-6 space-y-1 border-l-2 border-blue-100 ml-3 py-1">
-                  {submenus[item.id].map((sub, sIdx) => (
+              return (
+                <div key={item.id} className="rounded-xl overflow-hidden">
+                  <div className="flex items-center justify-between hover:bg-slate-50 rounded-xl px-3 py-2">
                     <button
-                      key={sIdx}
-                      onClick={() => handleSubmenuClick(sub)}
-                      className="w-full text-left px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-[#0052CC]"
+                      onClick={(e) => {
+                        setMobileOpen(false);
+                        handleNavClick(e, item);
+                      }}
+                      className={`text-left text-sm font-semibold flex-1 ${
+                        currentPage === item.id ? 'text-[#0052CC] font-bold' : 'text-slate-800'
+                      }`}
                     >
-                      {sub.name}
+                      {item.name}
                     </button>
-                  ))}
+                    {hasSub && (
+                      <button
+                        onClick={() => setExpandedMobileSubmenu(isExpanded ? null : item.id)}
+                        className="p-1.5 text-slate-400 hover:text-[#0052CC] focus:outline-none"
+                      >
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#0052CC]' : ''}`} />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Mobile Submenu Accordion */}
+                  {hasSub && isExpanded && (
+                    <div className="pl-4 pr-2 space-y-1 border-l-2 border-blue-200 ml-4 py-1.5 my-1 bg-slate-50/50 rounded-r-xl">
+                      {submenus[item.id].map((sub, sIdx) => (
+                        <button
+                          key={sIdx}
+                          onClick={() => {
+                            setMobileOpen(false);
+                            handleSubmenuClick(sub);
+                          }}
+                          className="w-full text-left flex items-center space-x-2.5 px-3 py-2 text-xs font-medium text-slate-700 hover:text-[#0052CC] hover:bg-white rounded-lg transition-colors"
+                        >
+                          <div className="p-1 rounded-md bg-white border border-slate-100 shrink-0">
+                            {sub.icon}
+                          </div>
+                          <span>{sub.name}</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
-          
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              if (onNavigate) onNavigate('contact');
-            }}
-            className="w-full mt-2 py-3 rounded-full text-xs font-bold text-white bg-[#0052CC] text-center"
-          >
-            Get in Touch
-          </button>
+              );
+            })}
+          </div>
+
+          <div className="pt-2 border-t border-slate-100">
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                if (onNavigate) onNavigate('contact');
+              }}
+              className="w-full py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#0052CC] to-[#003B94] text-center shadow-md active:scale-98 transition-all"
+            >
+              Get in Touch
+            </button>
+          </div>
         </div>
       )}
 

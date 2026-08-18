@@ -2,7 +2,7 @@ import ScrollReveal from '../common/ScrollReveal';
 
 export default function Hero({ onOpenContact }) {
   return (
-    <section className="relative pt-16 pb-24 lg:pt-20 lg:pb-32 animated-constellation-pattern overflow-hidden text-center">
+    <section className="relative pt-10 sm:pt-16 pb-20 lg:pt-20 lg:pb-32 animated-constellation-pattern overflow-hidden text-center">
       
       {/* Constellation Overlay Line Graphics */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

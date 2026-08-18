@@ -8,10 +8,14 @@
   html {
     font-family: 'Sora', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
     @apply bg-white text-star-slate antialiased selection:bg-star-blue selection:text-white min-h-screen transition-colors duration-300;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 

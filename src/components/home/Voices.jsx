@@ -29,7 +29,7 @@ export default function Voices() {
         
         {/* Header */}
         <ScrollReveal animation="fade-up" className="text-center max-w-4xl mx-auto mb-16 space-y-3">
-          <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight whitespace-nowrap">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight sm:whitespace-nowrap">
             Voices of Innovation
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
