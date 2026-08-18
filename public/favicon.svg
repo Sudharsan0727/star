@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052CC" />
+      <stop offset="100%" stop-color="#003B94" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#003B94" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded Box Background -->
+  <rect width="512" height="512" rx="128" fill="url(#star-grad)" />
+
+  <!-- Outer Glowing Orbit Ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#60A5FA" stroke-width="12" stroke-dasharray="24 16" opacity="0.6" />
+
+  <!-- 4-Point Star Graphic -->
+  <path d="M 256 96 Q 256 256 384 256 Q 256 256 256 416 Q 256 256 128 256 Q 256 256 256 96 Z" fill="#FFFFFF" filter="url(#shadow)" />
+
+  <!-- Center Core Node -->
+  <circle cx="256" cy="256" r="28" fill="#FFB800" />
+</svg>
