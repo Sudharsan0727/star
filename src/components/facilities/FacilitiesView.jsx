@@ -53,6 +53,18 @@ export default function FacilitiesView({ onOpenContact }) {
         { name: "Four Probe Measurements" },
       ]
     },
+     {
+      title: "Computational & Data Analysis",
+      items: [
+        { name: "OriginPro" },
+        { name: "MATLAB" },
+        { name: "COMSOL" },
+        { name: "ImageJ" },
+        { name: "SPSS" },
+        { name: "GraphPad Prism" },
+        { name: "Crystal Structure Refinement" },
+      ]
+    },
     {
       title: "Thermal Characterization",
       items: [
@@ -84,18 +96,7 @@ export default function FacilitiesView({ onOpenContact }) {
         { name: "UV Kinetics" },
       ]
     },
-    {
-      title: "Computational & Data Analysis",
-      items: [
-        { name: "OriginPro" },
-        { name: "MATLAB" },
-        { name: "COMSOL" },
-        { name: "ImageJ" },
-        { name: "SPSS" },
-        { name: "GraphPad Prism" },
-        { name: "Crystal Structure Refinement" },
-      ]
-    }
+   
   ];
 
   return (

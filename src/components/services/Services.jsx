@@ -23,11 +23,11 @@ export default function Services({ onOpenContact }) {
 
   return (
     <div className="w-full font-sans bg-white text-slate-900">
-      
+
       {/* 1. HERO SECTION */}
       <section className="py-32 sm:py-36 bg-[#F9F9FC] text-center border-b border-slate-100/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          
+
           {/* Top Category Badge */}
           <div className="inline-block">
             <span className="bg-[#D9E8FC] text-[#0052CC] text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
@@ -68,7 +68,7 @@ export default function Services({ onOpenContact }) {
       {/* 2. CORE SERVICE OFFERINGS */}
       <section className="py-24 bg-white border-b border-slate-100 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
@@ -81,10 +81,10 @@ export default function Services({ onOpenContact }) {
 
           {/* 3 Columns Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-            
+
             {/* COLUMN 1: STACK OF 2 CARDS */}
             <div className="flex flex-col justify-between space-y-6 h-full">
-              
+
               {/* Card 1: Research & Publication Support */}
               <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between grow">
                 <div className="bg-gradient-to-r from-[#003B94] to-[#002D7A] text-white px-5 py-3.5 font-bold text-sm sm:text-base">
@@ -217,7 +217,7 @@ export default function Services({ onOpenContact }) {
 
             {/* COLUMN 3: STACK OF 2 CARDS */}
             <div className="flex flex-col justify-between space-y-6 h-full">
-              
+
               {/* Card 1: Academic Projects */}
               <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow overflow-hidden flex flex-col justify-between grow">
                 <div className="bg-gradient-to-r from-[#003B94] to-[#002D7A] text-white px-5 py-3.5 font-bold text-sm sm:text-base">
@@ -286,33 +286,136 @@ export default function Services({ onOpenContact }) {
       </section>
 
       {/* 3. WHY CHOOSE US */}
+
       <section className="py-24 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header */}
-          <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
+          <div className="text-center max-w-2xl mx-auto mb-20">
             <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight">
               Why Choose Us
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              Precision-engineered research solutions tailored for global scholarly and commercial impact.
+
+            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+              Precision-engineered research solutions tailored for global scholarly
+              and commercial impact.
             </p>
           </div>
 
-          {/* 4-Col Grid of Feature Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-24">
             {whyChooseUsFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between text-center group"
+                className="
+            relative
+            h-[200px]
+            bg-[#EAF2FF]
+            border border-[#D5E2F7]
+            rounded-[28px]
+            flex
+            items-center
+            justify-center
+            text-center
+            px-8
+            pt-8
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:shadow-lg
+          "
               >
-                {/* Top Gray Square Placeholder */}
-                <div className="w-full aspect-square bg-[#F1F3F7] rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-50 transition-colors">
-                  <Compass className="w-8 h-8 text-[#0052CC] opacity-80" />
+
+                {/* Icon Badge */}
+                <div
+                  className="
+              absolute
+              -top-8
+              left-1/2
+              -translate-x-1/2
+              w-[60px]
+              h-[60px]
+              rounded-[14px]
+              bg-gradient-to-b
+              from-[#0066D9]
+              to-[#003B7A]
+              flex
+              items-center
+              justify-center
+              shadow-sm
+            "
+                >
+                  {/* Drafting Compass Icon */}
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 6V10"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+
+                    <circle
+                      cx="16"
+                      cy="6"
+                      r="2"
+                      stroke="white"
+                      strokeWidth="2"
+                    />
+
+                    <path
+                      d="M15.5 10L10.5 25"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M16.5 10L21.5 25"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M11 24L9 27"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M21 24L23 27"
+                      stroke="white"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                    />
+
+                    <path
+                      d="M13 12H19"
+                      stroke="white"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
                 </div>
 
-                {/* Bottom Title Label */}
-                <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug max-w-[200px] mx-auto">
+                {/* Feature Title */}
+                <h3
+                  className="
+              max-w-[240px]
+              text-xl
+              sm:text-[22px]
+              font-semibold
+              leading-[1.55]
+              text-slate-950
+            "
+                >
                   {feat.title}
                 </h3>
               </div>
@@ -330,7 +433,7 @@ export default function Services({ onOpenContact }) {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-[#0047BA] via-[#003B94] to-[#002D7A] rounded-[36px] sm:rounded-[44px] p-10 sm:p-16 text-center text-white shadow-xl space-y-6">
-            
+
             <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
               Ready to Elevate Your Research?
             </h2>
