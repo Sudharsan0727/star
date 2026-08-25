@@ -26,7 +26,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
       { name: "Published works", action: 'collaborations-published', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Completed projects", action: 'collaborations-completed', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Research Experts", action: 'collaborations-experts', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Our Research Partner", action: 'collaborations-partners', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Join Our Team", action: 'join-our-team', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
     ],
   };
 

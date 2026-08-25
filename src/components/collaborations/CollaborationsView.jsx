@@ -110,7 +110,7 @@ export default function CollaborationsView({ initialTab = 'ongoing', onOpenConta
             {activeTab === 'partners' ? (
               <div className="space-y-2 sm:space-y-3 leading-snug">
                 <span className="block font-semibold">To join our team</span>
-                <span className="block font-bold">Become Our Research Partner</span>
+                {/* <span className="block font-bold">Become Our Research Partner</span> */}
               </div>
             ) : (
               <span className="font-semibold">{getHeadline()}</span>

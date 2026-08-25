@@ -37,7 +37,7 @@ export default function About({ onOpenContact }) {
 
   const bottomRowExpertise = [
     {
-      icon:<FilePenLine className="w-5 h-5 text-[#0052CC]" />,
+      icon: <FilePenLine className="w-5 h-5 text-[#0052CC]" />,
       title: "Proposal Writing",
       desc: "Crafting compelling research proposals that align with funding agency requirements and maximize the chances of approval."
     },
@@ -51,7 +51,7 @@ export default function About({ onOpenContact }) {
       title: "Advanced Characterization",
       desc: "Combining academic excellence with practical research experience to deliver high-quality, reliable, and customized research services."
     }
-    
+
   ];
 
   return (
@@ -153,9 +153,9 @@ export default function About({ onOpenContact }) {
                 />
 
                 <div className="absolute bottom-6 left-6 right-6 bg-[#E5E9EF] p-4 sm:p-5 rounded-2xl shadow-md border border-slate-200/80">
-                  <h4 className="text-sm sm:text-base font-bold text-slate-900">Dr. Anandan</h4>
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">Dr. R. Ananthan</h4>
                   <p className="text-xs text-slate-600 font-medium">
-                    Director & Founder, Star ResearchHub
+                    IIT-Delhi Alumnuns
                   </p>
                 </div>
               </div>
@@ -174,13 +174,24 @@ export default function About({ onOpenContact }) {
                 </div>
 
                 <p className="text-base sm:text-lg font-bold text-[#0052CC] italic leading-relaxed relative z-10">
-                  "Our goal is not just to provide data, but to catalyze discovery. We believe that every researcher deserves a partner who values integrity as much as innovation. At Star ResearchHub, we bridge the gap between complex raw data and impactful scientific narrative."
+                  At Star ResearchHub, we are committed to nurturing a culture of ethical, rigorous, and impactful research across disciplines. We support students, scholars, faculty, and researchers throughout their research journey from developing an idea and designing the study to experimentation, data analysis, publication, and thesis guidance
                 </p>
               </div>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
-                We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D. scholars, scientists, and academicians with expertise across science and engineering disciplines. Headquartered in the capital city of Tamil Nadu, India, we provide comprehensive research solutions to students, faculty members, industries, and research organizations worldwide.
+                As an IIT Delhi alumnus, I believe that meaningful research begins with a strong question, grows through scientific rigour, and creates value through knowledge and innovation.              </p>
+
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
+                Our mission is simple: to empower researchers to turn ideas into impactful research.
               </p>
+
+              <p className="text-base sm:text-lg font-bold text-[#0052CC] italic leading-relaxed relative z-10">
+                Dr. R. Ananthan                </p>
+
+
+              <p className="text-base sm:text-sm font-bold text-[#0052CC] italic leading-relaxed relative z-10 !mt-0">
+                Director, Star ResearchHub | IIT Delhi Alumnus           </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                 <button
