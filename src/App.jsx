@@ -8,6 +8,7 @@ import ServicesPage from './pages/ServicesPage';
 import ExpertisePage from './pages/ExpertisePage';
 import FacilitiesPage from './pages/FacilitiesPage';
 import CollaborationsPage from './pages/CollaborationsPage';
+import JoinTeamPage from './pages/JoinTeamPage';
 import ContactPage from './pages/ContactPage';
 
 export default function App() {
@@ -78,6 +79,8 @@ export default function App() {
         return <FacilitiesPage onOpenContact={scrollToContact} />;
       case 'collaborations':
         return <CollaborationsPage activeTab={collaborationsTab} onOpenContact={scrollToContact} />;
+      case 'join-our-team':
+        return <JoinTeamPage onOpenContact={scrollToContact} />;
       case 'contact':
         return <ContactPage />;
       case 'home':

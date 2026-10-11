@@ -4,7 +4,8 @@ import {
   Cpu,
   GraduationCap,
   Compass,
-  Download
+  Download,
+  ArrowRight
 } from 'lucide-react';
 import Institutions from '../home/Institutions';
 import Voices from '../home/Voices';
@@ -50,16 +51,9 @@ export default function Services({ onOpenContact }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={onOpenContact}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-md transition-colors cursor-pointer"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-[#0052CC] hover:shadow-[0_0_0_2px_rgba(0,82,204,0.25)] hover:-translate-y-0.5"
             >
-              Explore Services
-            </button>
-            <button
-              onClick={onOpenContact}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors flex items-center justify-center space-x-2 cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-slate-600" />
-              <span>Download Brochure</span>
+              <span>Explore Services</span><ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
 
@@ -427,7 +421,7 @@ export default function Services({ onOpenContact }) {
       </section>
 
       {/* 4. INSTITUTIONS & VOICES */}
-      <Institutions />
+      {/* <Institutions /> */}
       <Voices />
 
       {/* 5. CTA BANNER */}
@@ -446,15 +440,9 @@ export default function Services({ onOpenContact }) {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button
                 onClick={onOpenContact}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-[#003B94] bg-white hover:bg-slate-100 shadow-md transition-colors cursor-pointer"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold text-[#003B94] bg-white shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:bg-[#003B94] hover:text-white hover:shadow-[0_0_0_2px_rgba(255,255,255,0.35)] hover:-translate-y-0.5"
               >
-                Schedule a Consultation
-              </button>
-              <button
-                onClick={onOpenContact}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-transparent border border-white/40 hover:bg-white/10 transition-colors cursor-pointer"
-              >
-                Download Capability Statement
+                <span>Schedule a Consultation</span><ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
 

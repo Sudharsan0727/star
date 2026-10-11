@@ -1,4 +1,5 @@
 import ScrollReveal from '../common/ScrollReveal';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero({ onOpenContact }) {
   return (
@@ -65,9 +66,9 @@ export default function Hero({ onOpenContact }) {
 
       <ScrollReveal animation="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Top Tag Pill */}
+        {/* Top Tag */}
         <div className="flex justify-center mb-6">
-          <span className="inline-block px-5 py-1.5 rounded-full text-xs font-semibold tracking-wider text-[#1D4ED8] bg-[#DCEBFE]/80 border border-[#BFDBFE]">
+          <span className="inline-block text-xs font-semibold tracking-wider text-[#1D4ED8]">
             WORLD-CLASS SCIENTIFIC CONSULTANCY
           </span>
         </div>
@@ -85,21 +86,15 @@ export default function Hero({ onOpenContact }) {
           research support worldwide.
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Primary Action */}
+        <div className="flex items-center justify-center">
           
           <button
             onClick={onOpenContact}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-bold text-white bg-gradient-to-b from-[#0052CC] to-[#003B94] hover:from-[#0040A8] hover:to-[#002D7A] shadow-lg shadow-blue-900/30 active:scale-95 transition-all duration-200"
+            className="w-full sm:w-auto select-none inline-flex items-center justify-center gap-2 px-11 py-4 rounded-full text-sm font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-lg shadow-blue-900/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
           >
-            Get Consultation
-          </button>
-
-          <button
-            onClick={onOpenContact}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs font-bold text-slate-900 bg-white hover:bg-slate-50 border border-slate-400/80 shadow-xs transition-all duration-200"
-          >
-            Submit Your Requirement
+            <span>Get Consultation</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
 
         </div>

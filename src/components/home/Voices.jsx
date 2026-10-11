@@ -24,13 +24,13 @@ export default function Voices() {
   ];
 
   return (
-    <section className="py-24 bg-[#F0F6FE] border-t border-slate-100 font-sans">
+    <section className="py-24 bg-white border-t border-slate-100 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <ScrollReveal animation="fade-up" className="text-center max-w-4xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-semibold text-slate-900 tracking-tight whitespace-nowrap">
-            Voices of Innovation
+            Testimonials
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
             Experience shared by our partners in the field, academia, and the boardroom.
@@ -44,7 +44,7 @@ export default function Voices() {
               key={idx}
               animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
               delay={idx * 150}
-              className="p-8 sm:p-9 rounded-3xl bg-white border border-slate-100/90 shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow"
+              className="p-8 sm:p-9 rounded-3xl bg-white border border-blue-100 shadow-[0_10px_30px_rgba(15,48,95,0.10)] flex flex-col justify-between hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,48,95,0.16)] transition-all duration-200"
             >
               <div>
                 {/* Avatar & Partner Info */}

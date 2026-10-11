@@ -1,4 +1,4 @@
-import { FileText, FileEdit, Upload, GraduationCap, BarChart2, Microscope, CheckCircle2, FilePenLine } from 'lucide-react';
+import { FileText, FileEdit, Upload, GraduationCap, BarChart2, Microscope, CheckCircle2, FilePenLine, ArrowRight } from 'lucide-react';
 import unionBg from '../../assets/Union.png';
 import containerImg from '../../assets/Container.png';
 import ctaBg from '../../assets/Image.png';
@@ -37,7 +37,7 @@ export default function About({ onOpenContact }) {
 
   const bottomRowExpertise = [
     {
-      icon:<FilePenLine className="w-5 h-5 text-[#0052CC]" />,
+      icon: <FilePenLine className="w-5 h-5 text-[#0052CC]" />,
       title: "Proposal Writing",
       desc: "Crafting compelling research proposals that align with funding agency requirements and maximize the chances of approval."
     },
@@ -51,7 +51,7 @@ export default function About({ onOpenContact }) {
       title: "Advanced Characterization",
       desc: "Combining academic excellence with practical research experience to deliver high-quality, reliable, and customized research services."
     }
-    
+
   ];
 
   return (
@@ -84,24 +84,19 @@ export default function About({ onOpenContact }) {
                 Experience.
               </h1>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <div className="flex items-center pt-2">
                 <button
                   onClick={onOpenContact}
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-md transition-colors cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-md transition-all hover:-translate-y-0.5 cursor-pointer"
                 >
-                  Get Consultation
-                </button>
-                <button
-                  onClick={onOpenContact}
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-full text-xs font-bold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors cursor-pointer"
-                >
-                  Submit Your Requirement
+                  <span>Get Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </ScrollReveal>
 
             {/* Right Paragraphs */}
-            <ScrollReveal animation="fade-right" className="lg:col-span-6 space-y-6 text-base text-slate-600 leading-relaxed font-medium">
+            <ScrollReveal animation="fade-right" className="lg:col-span-6 space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
               <p>
                 We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D.
                 scholars, scientists, and academicians with expertise across science and engineering
@@ -119,7 +114,7 @@ export default function About({ onOpenContact }) {
       </section>
 
       {/* 2. FULL-WIDTH STATS BAR */}
-      <section className="py-12 bg-gradient-to-r from-[#0052CC] via-[#0047BA] to-[#003B94] text-white">
+      {/* <section className="py-12 bg-gradient-to-r from-[#0052CC] via-[#0047BA] to-[#003B94] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((item, idx) => (
@@ -134,7 +129,7 @@ export default function About({ onOpenContact }) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 3. MESSAGE FROM THE DIRECTOR */}
       <section id="director-message" className="py-24 bg-white border-b border-slate-100">
@@ -153,9 +148,9 @@ export default function About({ onOpenContact }) {
                 />
 
                 <div className="absolute bottom-6 left-6 right-6 bg-[#E5E9EF] p-4 sm:p-5 rounded-2xl shadow-md border border-slate-200/80">
-                  <h4 className="text-sm sm:text-base font-bold text-slate-900">Dr. Anandan</h4>
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900">Dr. R. Ananthan</h4>
                   <p className="text-xs text-slate-600 font-medium">
-                    Director & Founder, Star ResearchHub
+                    IIT-Delhi Alumnuns
                   </p>
                 </div>
               </div>
@@ -174,28 +169,24 @@ export default function About({ onOpenContact }) {
                 </div>
 
                 <p className="text-base sm:text-lg font-bold text-[#0052CC] italic leading-relaxed relative z-10">
-                  "Our goal is not just to provide data, but to catalyze discovery. We believe that every researcher deserves a partner who values integrity as much as innovation. At Star ResearchHub, we bridge the gap between complex raw data and impactful scientific narrative."
+                  At Star ResearchHub, we are committed to nurturing a culture of ethical, rigorous, and impactful research across disciplines. We support students, scholars, faculty, and researchers throughout their research journey from developing an idea and designing the study to experimentation, data analysis, publication, and thesis guidance
                 </p>
               </div>
 
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
-                We are a multidisciplinary research consultancy comprising experienced researchers, Ph.D. scholars, scientists, and academicians with expertise across science and engineering disciplines. Headquartered in the capital city of Tamil Nadu, India, we provide comprehensive research solutions to students, faculty members, industries, and research organizations worldwide.
+                As an IIT Delhi alumnus, I believe that meaningful research begins with a strong question, grows through scientific rigour, and creates value through knowledge and innovation.              </p>
+
+
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-medium">
+                Our mission is simple: to empower researchers to turn ideas into impactful research.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                <button
-                  onClick={onOpenContact}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#003B94] hover:bg-[#002D7A] shadow-md transition-colors cursor-pointer"
-                >
-                  Get Consultation
-                </button>
-                <button
-                  onClick={onOpenContact}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-slate-900 bg-white border border-[#003B94] hover:bg-slate-50 transition-colors cursor-pointer"
-                >
-                  Submit Your Requirement
-                </button>
-              </div>
+              <p className="text-base sm:text-lg font-bold text-[#0052CC] italic leading-relaxed relative z-10">
+                Dr. R. Ananthan                </p>
+
+
+              <p className="text-base sm:text-sm font-bold text-[#0052CC] italic leading-relaxed relative z-10 !mt-0">
+                Director, Star ResearchHub | IIT Delhi Alumnus           </p>
 
             </ScrollReveal>
 
@@ -218,7 +209,6 @@ export default function About({ onOpenContact }) {
 
           <div className="space-y-6">
 
-            {/* Top Row: 4 Equal Width Vertical Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {topRowExpertise.map((item, idx) => (
                 <ScrollReveal key={idx} animation="fade-left" delay={idx * 100} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -237,7 +227,6 @@ export default function About({ onOpenContact }) {
               ))}
             </div>
 
-            {/* Bottom Row: 3 Wide Horizontal Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {bottomRowExpertise.map((item, idx) => (
                 <ScrollReveal key={idx} animation="fade-right" delay={idx * 100} className="p-8 rounded-3xl bg-white border border-slate-100/90 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
@@ -393,9 +382,9 @@ export default function About({ onOpenContact }) {
           <img
             src={ctaBg}
             alt="Research Consultancy Background"
-            className="w-full h-full object-cover opacity-85"
+            className="w-full h-full object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-slate-950/40"></div>
+          <div className="absolute inset-0 bg-slate-950/15"></div>
         </div>
 
         <ScrollReveal animation="zoom-in" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
@@ -410,15 +399,9 @@ export default function About({ onOpenContact }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               onClick={onOpenContact}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-md transition-colors cursor-pointer"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#0052CC] shadow-md transition-all duration-300 ease-in-out cursor-pointer hover:bg-white hover:text-[#0052CC] hover:shadow-[0_0_0_2px_rgba(0,82,204,0.25)] hover:-translate-y-0.5"
             >
-              Get Consultation
-            </button>
-            <button
-              onClick={onOpenContact}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-transparent border border-white/50 hover:bg-white/10 transition-colors cursor-pointer"
-            >
-              Submit Your Requirement
+              <span>Get Consultation</span><ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
         </ScrollReveal>

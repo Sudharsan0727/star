@@ -14,7 +14,8 @@ import {
   Droplets,
   Activity,
   Radio,
-  Layers
+  Layers,
+  ArrowRight
 } from 'lucide-react';
 
 export default function ExpertiseView({ initialTab = 'domains', onOpenContact }) {
@@ -141,6 +142,28 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
         "DFT",
         "Molecular Docking",
         "Python / R Programming"
+      ]
+    },
+    {
+      title: "Computer Science & IT",
+      icon: <Terminal className="w-7 h-7 text-[#0052CC] opacity-75" />,
+      bullets: [
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+         "Lorem Ipsum"
+      ]
+    },
+    {
+      title: "Arts",
+      icon: <Terminal className="w-7 h-7 text-[#0052CC] opacity-75" />,
+      bullets: [
+         "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+        "Lorem Ipsum",
+         "Lorem Ipsum"
       ]
     }
   ];
@@ -354,16 +377,16 @@ export default function ExpertiseView({ initialTab = 'domains', onOpenContact })
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button
                 onClick={onOpenContact}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-[#003B94] bg-white hover:bg-slate-100 shadow-md transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold text-[#003B94] bg-white hover:bg-slate-100 shadow-md transition-all"
               >
-                Schedule a Consultation
+                <span>Schedule a Consultation</span><ArrowRight className="w-4 h-4" />
               </button>
-              <button
+              {/* <button
                 onClick={onOpenContact}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full text-xs font-bold text-white bg-transparent border border-white/40 hover:bg-white/10 transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-xs font-bold text-white bg-white/15 border border-white/40 hover:bg-white/25 transition-all"
               >
-                Download Capability Statement
-              </button>
+                <span>Download Capability Statement</span><ArrowRight className="w-4 h-4" />
+              </button> */}
             </div>
 
           </div>

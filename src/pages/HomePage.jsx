@@ -14,14 +14,14 @@ export default function HomePage({ onOpenContact }) {
   return (
     <>
       <Hero onOpenContact={onOpenContact} />
-      <Updates />
+      {/* <Updates /> */}
       <WhoWeAre onOpenContact={onOpenContact} />
       <Expertise onOpenContact={onOpenContact} />
       <ApplicationAreas />
       <Workflow />
-      <Institutions />
+      {/* <Institutions /> */}
       <Voices />
-      <Insights />
+      {/* <Insights /> */}
       <ContactSection />
       <CallToAction onOpenContact={onOpenContact} />
     </>

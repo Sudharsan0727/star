@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Mail, Phone, ArrowUpRight, ArrowDown, Check } from 'lucide-react';
+import { MapPin, Mail, Phone, ArrowUpRight, ArrowDown, ArrowRight, Check } from 'lucide-react';
 import ScrollReveal from '../common/ScrollReveal';
 
 export default function ContactView() {
@@ -54,7 +54,7 @@ export default function ContactView() {
               <div className="flex flex-wrap items-center gap-6 pt-4">
                 <button
                   onClick={scrollToForm}
-                  className="bg-[#0052CC] hover:bg-[#003B94] text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm flex items-center space-x-2 shadow-md transition-all cursor-pointer"
+                  className="bg-[#0052CC] hover:bg-[#003B94] text-white px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm flex items-center space-x-2 shadow-md transition-all cursor-pointer"
                 >
                   <span>Submit Inquiry</span>
                   <ArrowDown className="w-4 h-4" />
@@ -207,9 +207,9 @@ export default function ContactView() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-black hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl text-xs sm:text-sm text-center shadow-md transition-colors cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-full text-xs sm:text-sm text-center shadow-md transition-all cursor-pointer"
                   >
-                    Initiate Consultation
+                    <span>Initiate Consultation</span><ArrowRight className="w-4 h-4" />
                   </button>
 
                 </form>

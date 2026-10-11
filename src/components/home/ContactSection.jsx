@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Mail, Phone, CheckCircle2 } from 'lucide-react';
+import { MapPin, Mail, Phone, CheckCircle2, ArrowRight } from 'lucide-react';
 import ScrollReveal from '../common/ScrollReveal';
 
 export default function ContactSection() {
@@ -107,9 +107,10 @@ export default function ContactSection() {
 
                   <button
                     type="submit"
-                    className="w-full py-5 rounded-2xl font-bold text-xs sm:text-sm text-white bg-[#0A0D14] hover:bg-slate-800 transition-colors shadow-md mt-2"
+                    className="w-full inline-flex items-center justify-center gap-2 py-5 rounded-full font-bold text-xs sm:text-sm text-white bg-[#0A0D14] hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-200 shadow-md mt-2"
                   >
-                    Send Message
+                    <span>Send Message</span>
+                    <ArrowRight className="w-4 h-4" />
                   </button>
 
                 </form>
