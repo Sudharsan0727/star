@@ -38,7 +38,7 @@ export default function Expertise({ onOpenContact }) {
 
             <button
               onClick={onOpenContact}
-              className="inline-flex items-center space-x-1.5 text-xs font-bold text-[#0052CC] hover:text-[#003B94] transition-colors w-fit"
+              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#0052CC] px-5 py-2.5 text-xs font-bold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#003B94]"
             >
               <span>Learn More</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -136,9 +136,10 @@ export default function Expertise({ onOpenContact }) {
             <div className="relative z-10">
               <button
                 onClick={onOpenContact}
-                className="inline-block text-xs font-bold text-white underline underline-offset-4 hover:text-amber-300 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-[#003B94] shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#FFB800]"
               >
-                Explore Analytics
+                <span>Explore Analytics</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
 

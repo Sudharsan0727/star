@@ -1,12 +1,94 @@
+import { useEffect, useRef, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import unionBg from '../../assets/Union.png';
 import ScrollReveal from '../common/ScrollReveal';
 
+// The project does not use a runtime prop-types package; these values are supplied by the local stats list below.
+// eslint-disable-next-line react/prop-types
+function AnimatedStat({ value, label, delay = 0 }) {
+  const statRef = useRef(null);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const statElement = statRef.current;
+    if (!statElement) return undefined;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCount(value);
+      return undefined;
+    }
+
+    let animationFrame;
+    let delayTimer;
+
+    const resetCounter = () => {
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(delayTimer);
+      setCount(0);
+    };
+
+    const animateCounter = () => {
+      resetCounter();
+      delayTimer = window.setTimeout(() => {
+        const startTime = window.performance.now();
+        const duration = 1200;
+
+        const tick = (currentTime) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const easedProgress = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.round(value * easedProgress));
+
+          if (progress < 1) {
+            animationFrame = window.requestAnimationFrame(tick);
+          }
+        };
+
+        animationFrame = window.requestAnimationFrame(tick);
+      }, delay);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      setCount(value);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animateCounter();
+        } else {
+          resetCounter();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(statElement);
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(delayTimer);
+    };
+  }, [delay, value]);
+
+  return (
+    <div ref={statRef} className="space-y-2">
+      <div className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+        {count}<span className="text-[#FFB800] font-semibold">+</span>
+      </div>
+      <div className="text-xs sm:text-sm font-semibold tracking-wider text-blue-100 uppercase">
+        {label}
+      </div>
+    </div>
+  );
+}
+
 export default function WhoWeAre({ onOpenContact }) {
   const stats = [
-    { number: "500", label: "RESEARCH PROJECTS" },
-    { number: "150", label: "JOURNAL PUBLICATIONS" },
-    { number: "40", label: "RESEARCH EXPERTS" },
-    { number: "20", label: "SCIENTIFIC DOMAINS" },
+    { value: 40, label: "RESEARCH EXPERTS" },
+    { value: 20, label: "SCIENTIFIC DOMAINS" },
+    { value: 150, label: "JOURNAL PUBLICATIONS" },
   ];
 
   return (
@@ -38,9 +120,10 @@ export default function WhoWeAre({ onOpenContact }) {
             <div className="pt-2">
               <button
                 onClick={onOpenContact}
-                className="px-6 py-2.5 rounded-md text-xs font-bold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#003B94] shadow-md shadow-blue-900/20 hover:-translate-y-0.5 transition-all duration-200"
               >
-                Contact Us
+                <span>Contact Us</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </ScrollReveal>
@@ -65,15 +148,10 @@ export default function WhoWeAre({ onOpenContact }) {
       {/* Full Width Vibrant Blue Stats Bar (with Yellow '+' Signs) */}
       <div className="w-full bg-gradient-to-r from-[#0052CC] via-[#0047BA] to-[#003B94] py-14 text-white shadow-inner relative z-10 my-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             {stats.map((stat, idx) => (
               <ScrollReveal key={idx} animation="zoom-in" delay={idx * 100} className="space-y-2">
-                <div className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
-                  {stat.number}<span className="text-[#FFB800] font-semibold">+</span>
-                </div>
-                <div className="text-xs sm:text-sm font-semibold tracking-wider text-blue-100 uppercase">
-                  {stat.label}
-                </div>
+                <AnimatedStat {...stat} delay={idx * 150} />
               </ScrollReveal>
             ))}
           </div>

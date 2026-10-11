@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Search, ChevronDown, Menu, X, Layers, Compass, FileText, UserCheck, ShieldCheck, BarChart2, Globe, Sparkles } from 'lucide-react';
+import logo from '../../assets/star-research-logo.png';
 
 export default function Header({ currentPage = 'home', onNavigate, onOpenContact }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
       { name: "Published works", action: 'collaborations-published', icon: <FileText className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Completed projects", action: 'collaborations-completed', icon: <Sparkles className="w-4 h-4 text-[#0052CC]" /> },
       { name: "Research Experts", action: 'collaborations-experts', icon: <UserCheck className="w-4 h-4 text-[#0052CC]" /> },
-      { name: "Join Our Team", action: 'join-our-team', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
+      { name: "Join Our Team", action: 'collaborations-partners', icon: <Globe className="w-4 h-4 text-[#0052CC]" /> },
     ],
   };
 
@@ -65,8 +66,8 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
   return (
     <header className="w-full font-sans sticky top-0 z-50 shadow-md">
       
-      {/* Tier 1: Top Dark Blue Announcement Bar */}
-      <div className="bg-gradient-to-r from-[#002D7A] via-[#003B94] to-[#004CB8] text-white py-3 px-4 sm:px-6 lg:px-8">
+      {/* Tier 1: Top Announcement Bar */}
+      <div className="bg-white text-slate-900 py-3 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Logo (Top Left) */}
@@ -74,24 +75,27 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
             onClick={() => onNavigate && onNavigate('home')}
             className="flex items-center space-x-3 cursor-pointer text-left focus:outline-none"
           >
-            <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center font-extrabold text-base text-[#003B94] shadow-sm">
-              S
+            <div className="w-16 h-16 shrink-0">
+              <img src={logo} alt="" className="w-full h-full object-contain" />
             </div>
-            <span className="font-extrabold text-xl tracking-tight text-white">
-              Star ResearchHub
-            </span>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+              <span className="font-extrabold text-xl tracking-tight text-[#003B94]">
+                Star ResearchHub
+              </span>
+              <span className="hidden sm:flex items-center gap-2 text-xs font-medium tracking-wide text-slate-800 italic">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                <span>Empowering Research, Innovation, and Scientific Excellence.</span>
+              </span>
+            </div>
           </button>
-
-          {/* Announcement Tagline (Top Right) */}
-          <div className="hidden md:flex items-center space-x-2 text-xs font-medium tracking-wide text-white/95">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0"></span>
-            <span className="italic font-semibold">Empowering Research, Innovation, and Scientific Excellence.</span>
-          </div>
 
           {/* Mobile Drawer Button */}
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-1.5 text-white hover:text-blue-200 focus:outline-none"
+            onClick={() => {
+              setMobileOpen(!mobileOpen);
+              setActiveDropdown(null);
+            }}
+            className="lg:hidden p-1.5 text-slate-800 hover:text-[#0052CC] focus:outline-none"
             aria-label="Toggle Navigation Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -101,7 +105,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
       </div>
 
       {/* Tier 2: Main Navigation Bar */}
-      <div className="bg-white border-b border-slate-200 py-4 px-4 sm:px-6 lg:px-8 relative">
+      <div className="bg-[#002147] border-b border-[#001a38] py-4 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Menu Items */}
@@ -119,12 +123,12 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
                 >
                   <button
                     onClick={(e) => handleNavClick(e, item)}
-                    className={`flex items-center space-x-1.5 px-1 py-2 text-base transition-colors hover:text-[#0052CC] cursor-pointer focus:outline-none ${
-                      isActive ? 'text-[#0052CC] font-bold' : 'text-slate-800'
+                    className={`flex items-center space-x-1.5 px-1 py-2 text-base transition-colors hover:text-[#FFB800] cursor-pointer focus:outline-none ${
+                      isActive ? 'text-white font-bold' : 'text-white'
                     }`}
                   >
                     <span>{item.name}</span>
-                    {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-slate-500 transition-transform group-hover:rotate-180" />}
+                    {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-white transition-all group-hover:rotate-180 group-hover:text-[#FFB800]" />}
                   </button>
 
                   {/* Dropdown Submenu Overlay */}
@@ -160,7 +164,7 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
 
             <button
               onClick={() => onNavigate && onNavigate('contact')}
-              className="px-6 py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-[#0052CC] to-[#003B94] hover:from-[#0040A8] hover:to-[#002D7A] shadow-md transition-all duration-200 cursor-pointer"
+              className="px-6 py-3 rounded-full text-sm font-bold text-black bg-white hover:bg-[#FFB800] shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
             >
               Get in Touch
             </button>
@@ -181,23 +185,31 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
             <div key={item.id} className="space-y-1">
               <button
                 onClick={(e) => {
-                  if (!item.hasDropdown) setMobileOpen(false);
+                  if (item.hasDropdown && submenus[item.id]) {
+                    e.preventDefault();
+                    setActiveDropdown(activeDropdown === item.id ? null : item.id);
+                    return;
+                  }
+
+                  setMobileOpen(false);
+                  setActiveDropdown(null);
                   handleNavClick(e, item);
                 }}
-                className="w-full text-left px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-[#0052CC] rounded-lg flex items-center justify-between"
+                aria-expanded={item.hasDropdown && submenus[item.id] ? activeDropdown === item.id : undefined}
+                className="w-full text-left px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-blue-50 hover:text-[#FFB800] rounded-lg flex items-center justify-between"
               >
                 <span>{item.name}</span>
-                {item.hasDropdown && <ChevronDown className="w-4 h-4 text-slate-400" />}
+                {item.hasDropdown && <ChevronDown className={`w-4 h-4 text-slate-400 transition-all group-hover:text-[#FFB800] ${activeDropdown === item.id ? 'rotate-180' : ''}`} />}
               </button>
 
               {/* Mobile Submenu List */}
-              {item.hasDropdown && submenus[item.id] && (
+              {item.hasDropdown && submenus[item.id] && activeDropdown === item.id && (
                 <div className="pl-6 space-y-1 border-l-2 border-blue-100 ml-3 py-1">
                   {submenus[item.id].map((sub, sIdx) => (
                     <button
                       key={sIdx}
                       onClick={() => handleSubmenuClick(sub)}
-                      className="w-full text-left px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-[#0052CC]"
+                      className="w-full text-left px-3 py-1.5 text-xs font-medium text-slate-600 hover:text-[#FFB800]"
                     >
                       {sub.name}
                     </button>
@@ -210,9 +222,10 @@ export default function Header({ currentPage = 'home', onNavigate, onOpenContact
           <button
             onClick={() => {
               setMobileOpen(false);
+              setActiveDropdown(null);
               if (onNavigate) onNavigate('contact');
             }}
-            className="w-full mt-2 py-3 rounded-full text-xs font-bold text-white bg-[#0052CC] text-center"
+            className="w-full mt-2 py-3 rounded-full text-xs font-bold text-white bg-[#0052CC] hover:bg-[#FFB800] text-center shadow-md transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
           >
             Get in Touch
           </button>
